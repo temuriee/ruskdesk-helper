@@ -23,6 +23,7 @@ const seedAdmin = require("./scripts/seedAdmin");
 const authRoutes = require("./modules/auth/auth.routes");
 const contactRoutes = require("./modules/contact/contact.routes");
 const categoryRoutes = require("./modules/category/category.routes");
+const groupRoutes = require("./modules/group/group.routes");
 
 // DNS resolution fix for environments with DNS issues (e.g. some Docker setups)
 const { setServers } = require("node:dns/promises");
@@ -159,6 +160,12 @@ const scheduleCronJobs = () => {
     }
   });
 };
+
+// -----------------------------
+// Join Group
+// -----------------------------
+
+app.use("/api/groups", groupRoutes);
 
 // ─────────────────────────────────────────────
 // Start Server

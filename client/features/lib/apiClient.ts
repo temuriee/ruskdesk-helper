@@ -2,7 +2,7 @@ const normalizeBaseUrl = (value: string) => value.replace(/\/$/, "");
 
 const getBaseUrl = () => {
   const configuredBaseUrl =
-    process.env.NEXT_PUBLIC_rustdesk - helper_API_URL?.trim();
+    process.env.NEXT_PUBLIC_rustdesk_helper_API_URL?.trim();
 
   if (configuredBaseUrl) {
     return normalizeBaseUrl(configuredBaseUrl);
@@ -27,7 +27,7 @@ const getBaseUrl = () => {
     return "http://localhost:5000";
   }
 
-  throw new Error("NEXT_PUBLIC_rustdesk-helper_API_URL is not configured.");
+  throw new Error("NEXT_PUBLIC_rustdesk_helper_API_URL is not configured.");
 };
 
 export async function safeFetch<T>(
