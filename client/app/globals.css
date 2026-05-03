@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Nato regular", sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+@font-face {
+  font-family: "Nato regular";
+  src: url("/font/NotoSansGeorgian-Regular.ttf") format(truetype);
+}
+
+@font-face {
+  font-family: "Nato bold";
+  src: url("/font/NotoSansGeorgian-Bold.ttf") format(truetype);
+}
+
+@font-face {
+  font-family: "Nato semiBold";
+  src: url("/font/NotoSansGeorgian-SemiBold.ttf") format(truetype);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Nato regular", sans-serif;
+}
+
+@theme {
+  --contact-shadow: 0px 8px 10px -6px rgba(226, 232, 240, 0.5);
+}
+
+@theme {
+  --breakpoint-xs: 570px;
+}
+
+@layer utilities {
+  .font-noto-regular {
+    font-family: "Nato regular", sans-serif;
+  }
+
+  .font-noto-semibold {
+    font-family: "Nato semiBold", sans-serif;
+  }
+
+  .font-noto-bold {
+    font-family: "Nato bold", sans-serif;
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14.3px);
+    -webkit-backdrop-filter: blur(14.3px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  .font-case {
+    -moz-font-feature-settings: "case";
+    -webkit-font-feature-settings: "case";
+    font-feature-settings: "case";
+    font-family: "BPG", sans-serif;
+  }
+}
