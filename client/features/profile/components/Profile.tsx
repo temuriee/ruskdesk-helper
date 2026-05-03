@@ -28,8 +28,6 @@ export default function Profile() {
     const data = { name, rustdeskId, password };
 
     localStorage.setItem("student", JSON.stringify(data));
-
-    router.push(`/${params.locale}/`);
   };
 
   useEffect(() => {

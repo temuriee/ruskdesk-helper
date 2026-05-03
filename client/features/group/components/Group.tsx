@@ -1,8 +1,7 @@
 "use client";
 
-import { useParams } from "next/navigation";
-import { useRouter } from "next/router";
-import { useState } from "react";
+import { useRouter, useParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [groupCode, setGroupCode] = useState("");
@@ -13,9 +12,11 @@ export default function Home() {
     if (!groupCode) return;
 
     localStorage.setItem("groupCode", groupCode);
-
-    router.push(`/${params.locale}/group`);
   };
+
+  useEffect(() => {
+    router.push(`/${params.locale}/group`);
+  });
 
   return (
     <div>
